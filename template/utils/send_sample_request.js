@@ -94,7 +94,7 @@ define([
       var ajaxRequest = {
           url        : url,
           headers    : header,
-          data       : param,
+          data       : JSON.stringify(param),
           type       : type.toUpperCase(),
           success    : displaySuccess,
           error      : displayError
