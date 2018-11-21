@@ -87,7 +87,10 @@ define([
                   param[ key ] = JSON.parse( val );
               } catch (e) {
               }
-          }
+             
+            } else if ( t === "number") {
+                 param[ key ] = Number(val)
+             }
       });
 
       // send AJAX request, catch success or error callback
