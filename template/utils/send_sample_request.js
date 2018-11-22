@@ -94,10 +94,15 @@ define([
       });
 
       // send AJAX request, catch success or error callback
+      var data = param;      
+      if (type.toUpperCase() != "GET")  {
+          data = JSON.stringify(param);
+      }     
+
       var ajaxRequest = {
           url        : url,
           headers    : header,
-          data       : JSON.stringify(param),
+          data       : data,
           type       : type.toUpperCase(),
           success    : displaySuccess,
           error      : displayError
